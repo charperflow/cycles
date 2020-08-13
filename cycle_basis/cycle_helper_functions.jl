@@ -78,9 +78,10 @@ function find_cycle(w,z,tree,seed)
     return cycle_path
 end
 
+"""
+BLAH BLAH BLAH
 
-
-
+"""
 function build_cycle_basis!(cycle_basis, E, T, tree)
     #=----------
     Now we select any v in V to serve as the root of the tree
@@ -182,4 +183,27 @@ function build_cycle_basis!(cycle_basis, E, T, tree)
 
         count = count + 1
     end
+end
+
+
+"""
+BLAH BLAH BLAH
+"""
+function basis_wrt_E(basis, E)
+    N = size(E)[1]
+    M = size(basis)[1]
+
+    basis_E = zeros(N)
+
+    for i = 1:M
+        for j = 1:N
+            if basis[i] == E[j]
+                basis_E[j] = 1
+                break
+            end
+        end
+    end
+
+    return basis_E
+
 end
